@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agendar consultoría | Construceg</title>
+  <meta name="description" content="Reserva tu consultoría express de 30 minutos con Construceg." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="agenda-body">
+  <!-- Topbar mínimo -->
+  <header class="topbar">
+    <div class="container flex between center">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="FOTOS\logo.jpg" alt="Logo Construceg" class="brand__logo-img" />
+        <span class="brand__name">Construceg</span>
+      </a>
+      <nav class="nav" aria-label="Navegación">
+        <a class="btn btn--ghost" href="index.html#consultorias">← Volver</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container agenda-grid">
+    <!-- Columna izquierda: Formulario embebido -->
+    <section class="agenda-form">
+      <h2>Reserva tu consultoría de 30&nbsp;min</h2>
+      <p class="muted">Completa el formulario y te confirmaremos por correo o WhatsApp. Zona horaria: UTC-5 (Ecuador).</p>
+
+      <!-- ⬇⬇⬇ REEMPLAZA ESTE SRC por el enlace de tu Google Form (vista previa / publicar) -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSersW0e-1bkM_kpPYrIIxUopJ8BqHnb_hAdkuLvRb9dnboG2w/viewform?usp=header"
+        style="width:100%;height:900px;border:1px solid var(--line);border-radius:12px;background:#fff"
+        title="Formulario de reserva de consultoría"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <div class="ok-msg">
+        <strong>¿Prefieres WhatsApp?</strong>
+        <p>
+          <a class="btn btn--solid" target="_blank" rel="noopener"
+             href="https://wa.me/593997338740?text=Hola%20Construceg,%20quiero%20agendar%20una%20consultor%C3%ADa%20de%2030%20min.%20Fecha:%20____%20Hora:%20____%20Tema:%20____">
+            Agendar por WhatsApp
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Columna derecha: Info -->
+    <aside class="agenda-calendar card">
+      <h2>¿Qué incluye?</h2>
+      <ul class="checklist">
+        <li>Video-llamada de 30 minutos (Google Meet o Zoom).</li>
+        <li>Revisión de ideas/planos y estimación por m².</li>
+        <li>Riesgos y recomendaciones técnicas priorizadas.</li>
+      </ul>
+      <h3>Política</h3>
+      <ul class="checklist">
+        <li>Reagendamientos sin costo con 12 h de antelación.</li>
+        <li>Confirmación enviada a tu correo/WhatsApp.</li>
+      </ul>
+      <p class="small muted">Cupos diarios limitados. Si no ves horarios disponibles, escríbenos por WhatsApp.</p>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container flex between center">
+      <p>© <span id="year"></span> Construceg</p>
+      <a href="#" class="link" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Arriba</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

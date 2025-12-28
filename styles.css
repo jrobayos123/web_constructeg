@@ -1,0 +1,293 @@
+/* ===========================
+   STYLES.CSS - Construteg
+   Paleta: Tomate + Blanco
+   Incluye: Nav fijo, Hero, Secciones,
+   Lightbox (galería), Páginas de Agenda
+   =========================== */
+
+/* --------- Variables y base --------- */
+:root{
+  --tomato:#FF6347;          /* rojo tomate */
+  --tomato-strong:#e5533d;   /* borde/hover */
+  --bg:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#666;
+  --card:#fff6f3;
+  --line:#f2f2f2;
+  --steel:#e3e3e3;           /* NUEVO color para estructuras metálicas */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+/* --------- Utilidades --------- */
+.container{width:min(1100px, 92%); margin-inline:auto}
+.flex{display:flex; gap:1rem}
+.center{align-items:center}
+.between{justify-content:space-between}
+.grid-2{display:grid; grid-template-columns:1.1fr 0.9fr; gap:2rem}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+.section{padding:4rem 0}
+.section--alt{background:#fff0eb}
+.section__header{margin-bottom:1.25rem}
+.section__header h2{margin:0 0 .5rem}
+
+/* --------- Botones y links --------- */
+.btn{
+  display:inline-block;
+  padding:.9rem 1.1rem;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  border:2px solid var(--tomato-strong);
+  transition:.2s ease;
+}
+.btn--solid{
+  background:var(--tomato);
+  color:#fff;
+}
+.btn--solid:hover{filter:brightness(.95)}
+.btn--ghost{
+  background:transparent;
+  color:#000;
+  border:2px solid var(--tomato-strong);
+}
+.btn--ghost:hover{background:var(--tomato); color:#fff}
+.pill{
+  background:var(--tomato);
+  color:#fff;
+  padding:.2rem .5rem;
+  border-radius:999px;
+  font-weight:800;
+}
+.link{color:#000; text-underline-offset:3px}
+.link:hover{background:#ffe2dc}
+
+/* --------- Topbar / Navegación --------- */
+.topbar{
+  position:sticky; top:0; z-index:10;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  height:70px;
+  display:flex; align-items:center;
+}
+.brand{display:flex; gap:.6rem; align-items:center; text-decoration:none; color:inherit}
+.brand__logo-img {
+  width: 100px;    /* tamaño del logo */
+  height: auto;   /* mantiene proporción */
+  border-radius: 6px; /* opcional, redondea esquinas */
+}
+
+.brand__name{font-weight:800; letter-spacing:.5px}
+
+.nav{ position:relative; }
+.nav__toggle{
+  display:none;
+  font-size:1.5rem;
+  background:transparent; border:0; cursor:pointer;
+}
+.nav__list{
+  display:flex;
+  gap:.6rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+.nav__list li{ flex:0 0 auto; }
+.nav__list a{
+  display:block;
+  text-decoration:none;
+  color:#000;
+  padding:.7rem .8rem;
+  border-radius:10px;
+  white-space:nowrap;
+  word-break:keep-all;
+}
+.nav__list a:hover{background:#ffe2dc}
+
+/* --------- Hero --------- */
+.hero{
+  position: relative;
+  background:
+    radial-gradient(80% 80% at 10% 10%, #ffe2dc 0%, transparent 60%),
+    radial-gradient(70% 70% at 90% 20%, #ffd3c7 0%, transparent 60%),
+    #fff;
+  padding:4rem 0 3rem;
+}
+.hero h1{font-size:clamp(1.8rem, 2.5vw + 1rem, 3rem); line-height:1.15; margin:0 0 .6rem}
+.lead{font-size:1.05rem; color:#333}
+.hero__cta{display:flex; gap:.7rem; margin:1rem 0 1.2rem}
+.badges{display:flex; flex-wrap:wrap; gap:.6rem; padding:0; margin:0; list-style:none}
+.badges li{
+  background:#ffe2dc; border:1px dashed var(--tomato-strong);
+  padding:.35rem .6rem; border-radius:999px; font-size:.9rem;
+}
+
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:1.1rem;
+  box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+.card--soft{background:var(--card)}
+.checklist{padding-left:1.2rem; margin:0}
+.checklist li{margin:.35rem 0}
+
+/* --------- Calculadora --------- */
+.calculator .field{display:flex; flex-direction:column; gap:.4rem}
+.field input, .field select, .field textarea{
+  padding:.7rem .8rem; border-radius:10px; border:1px solid var(--line); background:#fff;
+}
+.addons{margin:1rem 0; border:1px dashed var(--tomato-strong); padding:.8rem; border-radius:12px}
+.addons legend{padding:0 .4rem; font-weight:700}
+.check{display:inline-flex; align-items:center; gap:.4rem; margin-right:1rem}
+.calculator__actions{display:flex; gap:.6rem; margin:.5rem 0}
+.result{margin-top:1rem}
+.error{color:#b00020}
+.small{font-size:.9rem}
+.muted{color:var(--muted)}
+
+/* --------- Portafolio (galería) --------- */
+.gallery{
+  display:grid; grid-template-columns:repeat(6, 1fr); gap:.6rem;
+}
+.gallery__item{ overflow:hidden; border-radius:14px; border:1px solid var(--line); }
+.gallery__item img{
+  display:block; width:100%; height:170px; object-fit:cover; transition:transform .3s ease;
+}
+.gallery__item:hover img{transform:scale(1.05)}
+
+/* --------- Blog --------- */
+.posts{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; }
+.post h3{margin:.2rem 0 .5rem}
+
+/* --------- Servicios --------- */
+.service h3{margin:.2rem 0 .5rem}
+
+/* --------- Formulario de contacto --------- */
+.form .field{display:flex; flex-direction:column; gap:.35rem}
+.form button{margin-top:.4rem}
+
+/* --------- Footer --------- */
+.footer{ padding:1.2rem 0; background:#fff; border-top:1px solid var(--line); }
+
+/* =========================================
+   LIGHTBOX (Portafolio de Obras)
+   ========================================= */
+.lightbox{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.8);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none; transition:.2s ease;
+  z-index:1000;
+}
+.lightbox.open{ opacity:1; pointer-events:auto; }
+.lb__img{
+  max-width:min(90vw, 1100px);
+  max-height:80vh;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+.lb__btn{
+  position:absolute;
+  top:24px;
+  background:rgba(255,255,255,.15);
+  color:#fff; border:0; cursor:pointer;
+  width:44px; height:44px; border-radius:12px;
+  backdrop-filter: blur(6px);
+  font-size:22px; line-height:44px;
+}
+.lb__close{ right:24px; }
+.lb__prev{ left:24px; top:50%; transform:translateY(-50%); }
+.lb__next{ right:24px; top:50%; transform:translateY(-50%); }
+
+/* =========================================
+   PÁGINAS DE AGENDA (consultoría / visita)
+   ========================================= */
+.agenda-body{ background:#fff; }
+.agenda-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:1.2rem;
+  padding:2rem 0;
+}
+.agenda-form h2, .agenda-calendar h2{ margin-top:0 }
+.agenda-form .field{ display:flex; flex-direction:column; gap:.35rem; }
+.agenda-form input, .agenda-form select{
+  padding:.7rem .8rem; border-radius:10px; border:1px solid var(--line); background:#fff;
+}
+.big-date{
+  width:100%;
+  height:54px;
+  font-size:1rem;
+  padding:.5rem .8rem;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+}
+.ok-msg{
+  margin:.8rem 0 0;
+  background:#e8fff0;
+  border:1px solid #b6f2c8;
+  padding:.6rem .8rem;
+  border-radius:10px;
+}
+
+/* --------- Responsivo --------- */
+@media (max-width: 1200px){
+  .nav__toggle{ display:inline-block; }
+  .nav__list{
+    position:absolute;
+    right:1rem;
+    top:70px;
+    flex-direction:column;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:.5rem;
+    display:none;
+    min-width:240px;
+    box-shadow:0 10px 20px rgba(0,0,0,.06);
+  }
+  .nav__list.open{ display:flex; }
+}
+
+@media (max-width: 980px){
+  .grid-2{grid-template-columns:1fr; gap:1.5rem}
+  .grid-3{grid-template-columns:1fr; gap:1rem}
+  .gallery{grid-template-columns:repeat(3, 1fr)}
+  .posts{grid-template-columns:1fr}
+  .hero__text{text-align:left}
+  .agenda-grid{ grid-template-columns:1fr; }
+}
+
+/* =========================================
+   FONDO DE ESTRUCTURAS METÁLICAS EN HERO
+   ========================================= */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  z-index:0;
+  opacity:.22;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: 360px 216px;
+  background-image:
+    url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='300' height='180' viewBox='0 0 300 180'>\
+<rect fill='none' width='300' height='180'/>\
+<g stroke='%23e3e3e3' stroke-width='1.2' fill='none' stroke-linecap='round'>\
+<path d='M0 180 L60 0 L120 180 L180 0 L240 180 L300 0'/>\
+<path d='M0 0 L60 180 L120 0 L180 180 L240 0 L300 180'/>\
+<path d='M0 90H300'/>\
+<path d='M0 0H300 M0 180H300'/>\
+</g></svg>");
+  filter: contrast(95%) saturate(90%);
+}
+.hero > *{ position: relative; z-index:1; }

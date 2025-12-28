@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construceg | Construcción, Planos y Cálculo Estructural</title>
+  <meta name="description" content="Construteg: obras civiles, planos, cálculos estructurales, consultorías express, visita técnica y más." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- SEO básico -->
+<title>Construceg | Ingeniería civil en Machala: planos, cálculo estructural y obras</title>
+<meta name="description" content="Construceg ofrece planos, cálculo estructural, presupuestos y obras civiles en Ecuador . Consultoría express y visitas técnicas.">
+
+<!-- Evita meta keywords: Google no lo usa -->
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.tudominio.com/">
+
+<!-- Open Graph (Facebook/LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Construceg | Planos y Cálculo Estructural">
+<meta property="og:description" content="Ingeniería civil: planos, cálculos, presupuestos y obras. Consultoría express y visitas técnicas.">
+<meta property="og:url" content="https://www.tudominio.com/">
+<meta property="og:image" content="https://www.tudominio.com/img/og-construceg.jpg">
+
+<!-- Twitter / X Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Construceg | Ingeniería civil">
+<meta name="twitter:description" content="Planos, cálculo estructural y obras civiles en Pichincha.">
+<meta name="twitter:image" content="https://www.tudominio.com/img/og-construceg.jpg">
+
+<!-- Datos estructurados LocalBusiness (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Construceg",
+  "image": "https://www.tudominio.com/img/og-construceg.jpg",
+  "url": "https://www.tudominio.com/",
+  "telephone": "+593 97 338 740",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pichincha",
+    "addressRegion": "Quito",
+    "addressCountry": "EC"
+  },
+  "areaServed": "Pichincha, Ecuador",
+}
+</script>
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="topbar">
+    <div class="container flex between center">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="FOTOS\logo.jpg" alt="Logo Construceg" class="brand__logo-img" />
+        <span class="brand__name">Construceg</span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="nav__list">
+          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#consultorias">Consultorías</a></li>
+          <li><a href="#visita">Visita técnica</a></li>
+          <li><a href="#asesoramiento">Asesoramiento</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto" class="btn btn--solid">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="container grid-2">
+      <div class="hero__text">
+        <h1>Construimos con calidad, guiamos con experiencia.</h1>
+        <p class="lead">
+          Una constructora que acompaña con la mejor <strong>ayuda y guía</strong> al ejecutar
+          obras civiles. Siempre con <strong>ventajas reales</strong>: planificación, control de costos y seguridad.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#calculadora">Calcular presupuesto</a>
+          <a class="btn btn--ghost" href="#portafolio">Ver portafolio</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="card">
+          <h3>Ventajas frente a otras empresas</h3>
+          <ul class="checklist">
+            <li>Presupuestos claros y comparables.</li>
+            <li>Equipo de cálculo estructural certificado.</li>
+            <li>Visitas técnicas en <strong>48h</strong> (agenda sujeta a cupo).</li>
+            <li>Consultorías express de <strong>30 min</strong> online.</li>
+            <li>“Arma tu casa”: plan base en PDF firmado por el constructor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculadora -->
+  <section id="calculadora" class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2>Calculadora de presupuestos rápidos</h2>
+        <p>Obtén una <strong>estimación inicial</strong>. El valor final se confirma con visita técnica.</p>
+      </header>
+
+      <form class="calculator card" id="calcForm" onsubmit="event.preventDefault(); calcPresupuesto();">
+        <div class="grid-3">
+          <label class="field">
+            <span>Metros cuadrados (m²)</span>
+            <input type="number" id="m2" min="10" step="1" placeholder="Ej: 120" required />
+          </label>
+
+          <label class="field">
+            <span>Tipo de obra</span>
+            <select id="tipo">
+              <option value="nueva">Obra nueva</option>
+              <option value="remodelacion">Remodelación</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Calidad</span>
+            <select id="calidad">
+              <option value="basica">Básica</option>
+              <option value="estandar" selected>Estándar</option>
+              <option value="premium">Premium</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset class="addons">
+          <legend>Extras</legend>
+          <label class="check"><input type="checkbox" id="extraPlanos" /> Incluir Planos</label>
+          <label class="check"><input type="checkbox" id="extraCalculo" /> Cálculos estructurales</label>
+          <label class="check"><input type="checkbox" id="extraVisita" /> Visita técnica (48h)</label>
+        </fieldset>
+
+        <div class="calculator__actions">
+          <button type="submit" class="btn btn--solid">Calcular</button>
+          <button type="reset" class="btn btn--ghost" onclick="limpiarCalc()">Limpiar</button>
+        </div>
+
+        <div id="resultado" class="result" aria-live="polite"></div>
+        <p class="small muted">* Estimación referencial. No incluye trámites municipales ni suelos especiales.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portafolio" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h2>Portafolio de obras</h2>
+        <p>Algunas construcciones realizadas por Construteg.</p>
+      </header>
+
+      <div class="gallery">
+        <!-- Reemplaza los src con tus fotos reales -->
+        <figure class="gallery__item"><img src="FOTOS\obra1.jpeg" alt="Vivienda moderna de dos pisos" /></figure>
+        <figure class="gallery__item"><img src="FOTOS\obra2.jpeg" alt="Estructura de hormigón en obra" /></figure>
+        <figure class="gallery__item"><img src="FOTOS\obra3.jpeg" alt="Edificio en construcción" /></figure>
+        <figure class="gallery__item"><img src="FOTOS\obra4.jpeg" alt="Interior con acabados" /></figure>
+        <figure class="gallery__item"><img src="FOTOS\obra5.jpeg" alt="Plano arquitectónico" /></figure>
+        <figure class="gallery__item"><img src="FOTOS\obra6.jpeg" alt="Equipo en obra" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultorías express -->
+  <section id="consultorias" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Consultorías express (30 min)</h2>
+        <p>Resuelve dudas de diseño, costos y estructura en una videollamada de 30 minutos.</p>
+        <ul class="bullets">
+          <li>Agenda rápida (cupos diarios limitados).</li>
+          <li>Informe breve con recomendaciones clave.</li>
+        </ul>
+        <!-- ABRE EN OTRA PESTAÑA -->
+        <a class="btn btn--solid" href="agenda-consultoria.html" target="_blank" rel="noopener">Agendar consultoría</a>
+      </div>
+      <div class="card">
+        <h3>Incluye</h3>
+        <ul class="checklist">
+          <li>Revisión de ideas/planos preliminares.</li>
+          <li>Estimación de costos por m².</li>
+          <li>Riesgos y recomendaciones técnicas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visita técnica 48h -->
+  <section id="visita" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Visita técnica en 48 horas</h2>
+        <p>Programamos una visita con <strong>48h de antelación</strong> para evaluar in situ tu proyecto.</p>
+        <ul class="bullets">
+          <li>Levantamiento básico y fotografías.</li>
+          <li>Informe de hallazgos y recomendaciones.</li>
+        </ul>
+        <!-- ABRE EN OTRA PESTAÑA -->
+        <a class="btn btn--solid" href="agenda-visita.html" target="_blank" rel="noopener">Solicitar visita</a>
+        <p class="small muted">*Sujeto a disponibilidad por zona y calendario.</p>
+      </div>
+      <div class="card">
+        <h3>¿Qué llevamos?</h3>
+        <ul class="checklist">
+          <li>Medición láser / cinta.</li>
+          <li>Check-list de seguridad y estructura.</li>
+          <li>Validación de accesos y logística.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Asesoramiento, Servicios, Contacto y Footer (igual que antes) -->
+  <section id="asesoramiento" class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2>Asesoramiento a albañiles en obra</h2>
+        <p>Capacitación y acompañamiento para cuadrillas que ejecutan viviendas.</p>
+      </header>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Arranque de obra</h3>
+          <p>Trazos, niveles, replanteo y seguridad.</p>
+        </div>
+        <div class="card">
+          <h3>Estructura</h3>
+          <p>Refuerzo, encofrado, vaciado y curado del hormigón.</p>
+        </div>
+        <div class="card">
+          <h3>Acabados</h3>
+          <p>Enlucidos, pisos, cerámica e impermeabilización.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h2>Servicios</h2>
+        <p>Soluciones integrales para tu proyecto.</p>
+      </header>
+      <div class="grid-3">
+        <div class="service card">
+          <h3>Obras civiles</h3>
+          <p>Ejecución de obra con control de calidad, seguridad y cronograma.</p>
+        </div>
+        <div class="service card">
+          <h3>Planos</h3>
+          <p>Arquitectura, instalaciones y detalles listos para aprobación.</p>
+        </div>
+        <div class="service card">
+          <h3>Cálculos estructurales</h3>
+          <p>Diseño sísmico y memorias de cálculo por ingenieros acreditados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Contacta a Construceg</h2>
+        <ul class="bullets">
+          <li>WhatsApp: <a href="https://w.app/construceg1" target="_blank" rel="noopener">+593 997 338 740</a></li>
+          <li>Correo: <a href="mailto:construceg2023@gmail.com">construceg2023@gmail.com</a></li>
+          <li>Horario: Lun–Sáb 08:00–18:00</li>
+        </ul>
+      </div>
+      <form class="card form" onsubmit="event.preventDefault(); alert('Mensaje enviado. ¡Gracias!'); this.reset();">
+        <label class="field">
+          <span>Nombre</span>
+          <input type="text" required placeholder="Tu nombre" />
+        </label>
+        <label class="field">
+          <span>Correo</span>
+          <input type="email" required placeholder="tucorreo@ejemplo.com" />
+        </label>
+        <label class="field">
+          <span>Mensaje</span>
+          <textarea rows="4" required placeholder="Cuéntanos de tu obra"></textarea>
+        </label>
+        <button class="btn btn--solid" type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container flex between center">
+      <p>© <span id="year"></span> Construceg. Todos los derechos reservados.</p>
+      <a href="#inicio" class="link">↑ Volver arriba</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX (Portafolio) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Galería de imágenes">
+    <button class="lb__btn lb__close" aria-label="Cerrar">✕</button>
+    <button class="lb__btn lb__prev" aria-label="Anterior">‹</button>
+    <img class="lb__img" alt="Imagen de portafolio ampliada" />
+    <button class="lb__btn lb__next" aria-label="Siguiente">›</button>
+  </div>
+
+  <!-- JS mínimo -->
+  <script>
+    // Menú móvil
+    const toggle = document.querySelector('.nav__toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open');
+    });
+
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Calculadora
+    function calcPresupuesto() {
+      const m2 = Number(document.getElementById('m2').value || 0);
+      const tipo = document.getElementById('tipo').value;
+      const calidad = document.getElementById('calidad').value;
+      if (m2 < 10) {
+        document.getElementById('resultado').innerHTML = '<p class="error">Ingresa al menos 10 m².</p>';
+        return;
+      }
+      let base = (tipo === 'nueva') ? 380 : 300;
+      if (calidad === 'basica') base *= 0.9;
+      if (calidad === 'premium') base *= 1.25;
+      const extras = (document.getElementById('extraPlanos').checked ? 650 : 0)
+                   + (document.getElementById('extraCalculo').checked ? 780 : 0)
+                   + (document.getElementById('extraVisita').checked ? 60 : 0);
+      const total = base * m2 + extras;
+      const min = Math.round(total * 0.92), max = Math.round(total * 1.08);
+      document.getElementById('resultado').innerHTML = `
+        <div class="quote card card--soft">
+          <h4>Estimación referencial</h4>
+          <p><strong>Rango:</strong> $${min.toLocaleString()} – $${max.toLocaleString()} USD</p>
+          <p class="muted">Para un valor cerrado, agenda una <a href="agenda-visita.html" target="_blank" rel="noopener">visita técnica (48h)</a>.</p>
+          <a class="btn btn--solid" href="agenda-consultoria.html" target="_blank" rel="noopener">Reservar consultoría de 30 min</a>
+        </div>`;
+    }
+    function limpiarCalc(){ document.getElementById('resultado').innerHTML=''; }
+
+    // --- Lightbox Portafolio ---
+    (function(){
+      const imgs = Array.from(document.querySelectorAll('#portafolio .gallery__item img'));
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('.lb__img');
+      const btnPrev = lb.querySelector('.lb__prev');
+      const btnNext = lb.querySelector('.lb__next');
+      const btnClose = lb.querySelector('.lb__close');
+      let idx = 0;
+
+      function open(i){ idx = i; lbImg.src = imgs[idx].src; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+      function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+      function next(){ idx = (idx + 1) % imgs.length; lbImg.src = imgs[idx].src; }
+      function prev(){ idx = (idx - 1 + imgs.length) % imgs.length; lbImg.src = imgs[idx].src; }
+
+      imgs.forEach((img,i)=> img.addEventListener('click', ()=>open(i)));
+      btnClose.addEventListener('click', close);
+      btnNext.addEventListener('click', next);
+      btnPrev.addEventListener('click', prev);
+      lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
+      document.addEventListener('keydown', (e)=>{
+        if(!lb.classList.contains('open')) return;
+        if(e.key==='Escape') close();
+        if(e.key==='ArrowRight') next();
+        if(e.key==='ArrowLeft') prev();
+      });
+    })();
+  </script>
+</body>
+</html>
